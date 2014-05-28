@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}        
+    <ul class="frontpage listing">
+        {% if articles %}
+            {% for article in articles_page.object_list %}
+
+            <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+
+            {% endfor %}
+        {% else %}
+            {% for page in PAGES %}
+            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
